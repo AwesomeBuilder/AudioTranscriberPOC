@@ -15,10 +15,19 @@ final class SpeechTranscriber: NSObject, ObservableObject {
             return
         }
         let request = SFSpeechURLRecognitionRequest(fileURL: fileURL)
+        // Prefer on-device recognition when explicitly requested and supported. Otherwise fall back to network.
         if #available(iOS 13.0, *) {
-            request.requiresOnDeviceRecognition = onDevice
+            if onDevice && recognizer.supportsOnDeviceRecognition {
+                request.requiresOnDeviceRecognition = true
+            } else {
+                request.requiresOnDeviceRecognition = false
+        
         }
-        recognizer.recognitionTask(with: request) { result, error in
+        
+                else {
+        // Fallback for earlier iOS versions
+        request.requiresOnDeviceRecognition = false
+    }recognizer.recognitionTask(with: request) { result, error in
             if let error = error {
                 completion(.failure(error))
                 return
