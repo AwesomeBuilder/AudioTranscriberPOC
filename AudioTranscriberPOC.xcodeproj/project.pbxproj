@@ -1,0 +1,204 @@
+{
+	archiveVersion = 1;
+	classes = { };
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+	BF_APP /* AudioTranscriberPOCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_APP /* AudioTranscriberPOCApp.swift */; };
+	BF_CONTENT /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_CONTENT /* ContentView.swift */; };
+	BF_REC /* RecordingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_REC /* RecordingManager.swift */; };
+	BF_SPEECH /* SpeechTranscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_SPEECH /* SpeechTranscriber.swift */; };
+	BF_CK /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_CK /* CloudKitManager.swift */; };
+	BF_ASSETS /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FR_ASSETS /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+	FR_APP /* AudioTranscriberPOCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTranscriberPOCApp.swift; sourceTree = "<group>"; };
+	FR_CONTENT /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+	FR_REC /* RecordingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingManager.swift; sourceTree = "<group>"; };
+	FR_SPEECH /* SpeechTranscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechTranscriber.swift; sourceTree = "<group>"; };
+	FR_CK /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
+	FR_PLIST /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+	FR_ASSETS /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+	FR_PRODUCT /* ${PROJECT_NAME}.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "${PROJECT_NAME}.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+	PH_FRAMEWORKS /* Frameworks */ = {
+		isa = PBXFrameworksBuildPhase;
+		buildActionMask = 2147483647;
+		files = ( );
+		runOnlyForDeploymentPostprocessing = 0;
+	};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+	GROUP_MAIN = {
+		isa = PBXGroup;
+		children = (
+			GROUP_APP /* ${PROJECT_NAME} */,
+			GROUP_PRODUCTS /* Products */,
+		);
+		sourceTree = "<group>";
+	};
+	GROUP_PRODUCTS /* Products */ = {
+		isa = PBXGroup;
+		children = (
+			FR_PRODUCT /* ${PROJECT_NAME}.app */,
+		);
+		name = Products;
+		sourceTree = "<group>";
+	};
+	GROUP_APP /* ${PROJECT_NAME} */ = {
+		isa = PBXGroup;
+		children = (
+			FR_APP /* AudioTranscriberPOCApp.swift */,
+			FR_CONTENT /* ContentView.swift */,
+			GROUP_MANAGERS /* Managers */,
+			FR_ASSETS /* Assets.xcassets */,
+			FR_PLIST /* Info.plist */,
+		);
+		path = ${PROJECT_NAME};
+		sourceTree = "<group>";
+	};
+	GROUP_MANAGERS /* Managers */ = {
+		isa = PBXGroup;
+		children = (
+			FR_REC /* RecordingManager.swift */,
+			FR_SPEECH /* SpeechTranscriber.swift */,
+			FR_CK /* CloudKitManager.swift */,
+		);
+		path = Managers;
+		sourceTree = "<group>";
+	};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+	TARGET_APP /* ${PROJECT_NAME} */ = {
+		isa = PBXNativeTarget;
+		buildConfigurationList = CONFIG_TARGET_APP /* Build configuration list for PBXNativeTarget "${PROJECT_NAME}" */;
+		buildPhases = (
+			PH_SOURCES /* Sources */,
+			PH_FRAMEWORKS /* Frameworks */,
+			PH_RESOURCES /* Resources */,
+		);
+		buildRules = ( );
+		dependencies = ( );
+		name = ${PROJECT_NAME};
+		productName = ${PROJECT_NAME};
+		productReference = FR_PRODUCT /* ${PROJECT_NAME}.app */;
+		productType = "com.apple.product-type.application";
+	};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+	TARGET_PROJECT /* Project object */ = {
+		isa = PBXProject;
+		attributes = {
+			LastSwiftUpdateCheck = 1600;
+			LastUpgradeCheck = 1600;
+			TargetAttributes = {
+				TARGET_APP = {
+					ProvisioningStyle = Automatic;
+				};
+			};
+		};
+		buildConfigurationList = CONFIG_PROJECT /* Build configuration list for PBXProject "${PROJECT_NAME}" */;
+		compatibilityVersion = "Xcode 14.0";
+		developmentRegion = en;
+		hasScannedForEncodings = 0;
+		knownRegions = ( en, Base, );
+		mainGroup = GROUP_MAIN;
+		productRefGroup = GROUP_PRODUCTS /* Products */;
+		projectDirPath = "";
+		projectRoot = "";
+		targets = ( TARGET_APP, );
+	};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+	PH_RESOURCES /* Resources */ = {
+		isa = PBXResourcesBuildPhase;
+		buildActionMask = 2147483647;
+		files = ( BF_ASSETS /* Assets.xcassets in Resources */ );
+		runOnlyForDeploymentPostprocessing = 0;
+	};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+	PH_SOURCES /* Sources */ = {
+		isa = PBXSourcesBuildPhase;
+		buildActionMask = 2147483647;
+		files = (
+			BF_APP /* AudioTranscriberPOCApp.swift in Sources */,
+			BF_CONTENT /* ContentView.swift in Sources */,
+			BF_REC /* RecordingManager.swift in Sources */,
+			BF_SPEECH /* SpeechTranscriber.swift in Sources */,
+			BF_CK /* CloudKitManager.swift in Sources */,
+		);
+		runOnlyForDeploymentPostprocessing = 0;
+	};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+	CONFIG_DEBUG /* Debug */ = {
+		isa = XCBuildConfiguration;
+		buildSettings = {
+			ALWAYS_SEARCH_USER_PATHS = NO;
+			CLANG_ENABLE_MODULES = YES;
+			CLANG_ENABLE_OBJC_ARC = YES;
+			CODE_SIGN_STYLE = Automatic;
+			CURRENT_PROJECT_VERSION = 1;
+			DEVELOPMENT_TEAM = "";
+			GCC_C_LANGUAGE_STANDARD = gnu11;
+			IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+			LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+			MARKETING_VERSION = 1.0;
+			PRODUCT_BUNDLE_IDENTIFIER = com.awesomebuilder.AudioTranscriberPOC;
+			PRODUCT_NAME = "$(TARGET_NAME)";
+			SWIFT_VERSION = 5.0;
+			TARGETED_DEVICE_FAMILY = "1,2";
+		};
+		name = Debug;
+	};
+	CONFIG_RELEASE /* Release */ = {
+		isa = XCBuildConfiguration;
+		buildSettings = {
+			ALWAYS_SEARCH_USER_PATHS = NO;
+			CLANG_ENABLE_MODULES = YES;
+			CLANG_ENABLE_OBJC_ARC = YES;
+			CODE_SIGN_STYLE = Automatic;
+			CURRENT_PROJECT_VERSION = 1;
+			DEVELOPMENT_TEAM = "";
+			GCC_C_LANGUAGE_STANDARD = gnu11;
+			IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+			LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+			MARKETING_VERSION = 1.0;
+			PRODUCT_BUNDLE_IDENTIFIER = com.awesomebuilder.AudioTranscriberPOC;
+			PRODUCT_NAME = "$(TARGET_NAME)";
+			SWIFT_VERSION = 5.0;
+			TARGETED_DEVICE_FAMILY = "1,2";
+		};
+		name = Release;
+	};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+	CONFIG_PROJECT /* Build configuration list for PBXProject "${PROJECT_NAME}" */ = {
+		isa = XCConfigurationList;
+		buildConfigurations = ( CONFIG_DEBUG, CONFIG_RELEASE );
+		defaultConfigurationIsVisible = 0;
+		defaultConfigurationName = Release;
+	};
+	CONFIG_TARGET_APP /* Build configuration list for PBXNativeTarget "${PROJECT_NAME}" */ = {
+		isa = XCConfigurationList;
+		buildConfigurations = ( CONFIG_DEBUG, CONFIG_RELEASE );
+		defaultConfigurationIsVisible = 0;
+		defaultConfigurationName = Release;
+	};
+/* End XCConfigurationList section */
+
+};
+	rootObject = TARGET_PROJECT /* Project object */;
+}
