@@ -11,12 +11,18 @@ final class SpeechTranscriber: NSObject, ObservableObject {
 
     func transcribe(fileURL: URL, onDevice: Bool, completion: @escaping (Result<String, Error>) -> Void) {
         guard let recognizer = recognizer, recognizer.isAvailable else {
-            completion(.failure(NSError(domain: "SpeechTranscriber", code: -1, userInfo: [NSLocalizedDescriptionKey: "Recognizer unavailable"])))
+            completion(.failure(NSError(domain: "SpeechTranscriber", code: -1,
+                                        userInfo: [NSLocalizedDescriptionKey: "Recognizer unavailable"])))
             return
         }
         let request = SFSpeechURLRecognitionRequest(fileURL: fileURL)
+               // Prefer on-device recognition when explicitly requested and supported. Otherwise fallback to network
         if #available(iOS 13.0, *) {
-            request.requiresOnDeviceRecognition = onDevice
+            request.requiresOnDeviceRecognition = (onDevice && recognizer.supportsOnDeviceRecognition)
+        } else {
+            request.requiresOnDeviceRecognition = false
+        
+        
         }
         recognizer.recognitionTask(with: request) { result, error in
             if let error = error {
