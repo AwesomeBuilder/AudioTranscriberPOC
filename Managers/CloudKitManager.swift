@@ -20,8 +20,7 @@ final class CloudKitManager {
         self.container = container
         // Persist transcriptions in the private database so that only
         // the current user can access their recordings.
-        self.database = container.privateCloudDatabase
-    }
+        self.database = container.database(with: .private)
 
     /// Saves a transcription string to CloudKit.  A new `CKRecord` of
     /// type `Transcription` is created with a single `text` field.  The
